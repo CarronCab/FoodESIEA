@@ -7,61 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <link rel="stylesheet" href="/style.css">
-    <script src="/login.js" defer></script>
+    <script src="/client.js" defer></script>
   </head>
     <body>
       <header id="header">
 		    <h1>FoodESIEA</h1>
-        <form action="/login" id="myLoger" formaction="/top"> 
-          <button type="submit" id="login" >Logout</button>
+        <form action="/wrong-login" method="POST" id="myLoger">
+          <button type="submit" id="login" >Return</button>
         </form>
-        <h2>Welcome user#1</h2>
+        <h2>
+          Wrong combinaison of username and password
+        </h2>
       </header>
       <main>
-        <p>Tell me the place you like to eat around our school:</p>
-        <form id="myForm">
-          <input name="place" type="text" maxlength="100" placeholder="New place">
-          <input name="rate" type="text" maxlength="2" placeholder="Rate (0 to 10)">
-          <button type="submit" id="add">Submit Place</button>
-        </form>
-        <form id="mySecondForm">
-          <input name="delete" type="text" maxlength="2" placeholder="Row to delete">
-          <button type="submit" id="del">Delete</button>
-        </form>
-          <div id="search">
-            <table id="places">
-              <thead>
-                <tr>
-                  <th>
-                    Restaurants
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                  <tr v-for="gridColumn in places">
-                    <td>
-                      {{gridColumn}}
-                    </td>
-                  </tr>
-              </tbody>
-            </table>
-            <table>
-              <thead>
-                <tr>
-                  <th>
-                    Rates
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="rate in rates">
-                  <td>
-                    {{rate}}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+      
       </main>
       <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     </body>

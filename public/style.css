@@ -42,7 +42,7 @@ p {
 	background:white;
 	display: grid;
 	grid-template-columns: auto auto;
-	grid-template-rows: 50px 40px;
+	grid-template-rows: 50px 45px;
 	margin-top: 1%;
 }
 h1 {
