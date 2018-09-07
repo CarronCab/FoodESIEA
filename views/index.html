@@ -13,15 +13,14 @@
       <header id="header">
 		    <h1>FoodESIEA</h1>
         <form action="/login" method="POST" id="myLoger">
-          <input type="text" name="username" placeholder="username"><br>
-          <input type="password" name="password" placeholder="password"><br>
-          <input type="submit" name="login" id="login" placeholder="login"><br>
+          <input type="text" name="username" placeholder="username (= user)"><br>
+          <input type="password" name="password" placeholder="password (= user)"><br>
+          <button type="submit" name="login" id="login" placeholder="login">Login</button><br>
         </form>
         <h2>Welcome</h2>
       </header>
       <main>
         <p>Tell me the place you like to eat around our school:</p>
-
         <form id="myForm">
           <input name="place" type="text" maxlength="100" placeholder="New place">
           <input name="rate" type="text" maxlength="2" placeholder="Rate (0 to 10)">
@@ -65,7 +64,6 @@
               </tbody>
             </table>
           </div>
-
       </main>
       <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     </body>

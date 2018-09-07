@@ -19,6 +19,14 @@ app.get('/', function(request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
 
+app.get('/login', function(request, response) {
+  response.sendFile(__dirname + '/views/login.html');
+});
+
+app.get('/wrong-login', function(request, response) {
+  response.sendFile(__dirname + '/views/wrong-login.html');
+});
+
 app.post('/login', function(req, resp) {
   //resp.end(JSON.stringify(req.body));
   
@@ -32,11 +40,18 @@ app.post('/login', function(req, resp) {
 app.get('/redirects', function(req, resp) {
   session = req.session;
   if(session.uniqueID){
-    resp.redirect('/');
+    resp.redirect('/login');
   }else{
-     resp.send('wrong');
+      resp.redirect('/wrong-login');
   }
 });
+
+app.post('/wrong-login', function(req, resp){
+  
+ resp.sendFile(__dirname + '/views/index.html');  
+});
+
+
 
 var listener = app.listen(process.env.PORT, function() {
   console.log('Your app is listening on port ' + listener.address().port);
