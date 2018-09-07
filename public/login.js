@@ -1,10 +1,10 @@
 var express = require('express');
-var app = express();
 var bodyParser = require('body-parser');
 var sessions = require('express-session');
+
 var session;
 
-app.use(express.static('public'));
+var app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
@@ -15,26 +15,25 @@ app.use(sessions({
   saveUnitialiszed: true
 }))
 
-app.get('/', function(request, response) {
-  response.sendFile(__dirname + '/views/index.html');
+app.get('/login', function(req, resp) {
+  resp.sendFile(__dirname + '/views/login.html');
 });
 
 app.post('/login', function(req, resp) {
   //resp.end(JSON.stringify(req.body));
-  
   session = req.session;
-  if(req.body.username == 'user' && req.body.password == 'user') {
-    session.uniqueID= req.body.username;    
+  if(req.body.username == 'admin' && req.body.password == 'admin') {
+    session.id= req.body.username;    
   }
   resp.redirect('/redirects');
 });
 
 app.get('/redirects', function(req, resp) {
   session = req.session;
-  if(session.uniqueID){
-    resp.redirect('/');
+  if(session.id){
+    resp.redirect('/admin');
   }else{
-     resp.send('wrong');
+    resp.end('who are you??');
   }
 });
 
