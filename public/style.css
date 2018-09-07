@@ -20,6 +20,7 @@ body {
 }
 
 p {
+  margin-top: 30px;
   margin-left: 10px;  
 }
 
@@ -31,11 +32,17 @@ p {
 	margin-top: 30px;
 	margin-left: 5%;
 }
+
+#search{
+  display:grid;
+  grid-template-columns: 250px 150px;
+}
+
 #header {
 	background:white;
 	display: grid;
 	grid-template-columns: auto auto;
-	grid-template-rows: 60px 50px;
+	grid-template-rows: 50px 40px;
 	margin-top: 1%;
 }
 h1 {
@@ -69,10 +76,10 @@ h3 {
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	text-align: center;
-	border: 2px solid rgba(0,0,0,0.5);
-	background: rgba(0,0,0,0.3);
-	color: rgba(0,0,0,0.5);
-	box-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+	border: 2px solid rgba(100,0,100,0.5);
+	background: rgba(100,0,100,0.3);
+	color: rgba(100,0,100,0.5);
+	box-shadow: 1px 1px 2px rgba(100,0,100,0.4);
 	border-radius: 4px;
 	padding: 5px 20px;
 	margin-left: 21px;
@@ -89,26 +96,25 @@ margin-left: auto;
 margin-bottom: auto;
 letter-spacing: 1px;
 text-transform: uppercase;
-border: 2px solid rgba(200,0,0,0.6);
-background: rgba(200,0,0,0.3);
-color: rgba(200,0,0,0.6);
-box-shadow: 1px 1px 2px rgba(200,0,0,0.4);
+border: 2px solid rgba(100,0,100,0.6);
+background: rgba(100,0,100,0.3);
+color: rgba(100,0,100,0.6);
+box-shadow: 1px 1px 2px rgba(0,100,0,0.4);
 border-radius: 4px;
 padding: 5px 20px;
 cursor: pointer;
 }
 
 table {
-	border: 2px solid rgba(0,0,0,0.5);
+	border: 2px solid rgba(100,0,100,0.5);
 	border-radius: 3px;
 	background-color: #fff;
-	margin-left: 10px;
 	margin-top: 30px;
 }
 
 
 th {
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(100,0,100,0.5);
 	color: #fff;
 	cursor: pointer;
 }
@@ -153,4 +159,12 @@ th, td {
 	margin-top: 0px;
   
 }
+
+main{
+     margin: auto;
+    width: 75%;
+
+}
+
+
 

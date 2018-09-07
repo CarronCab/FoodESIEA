@@ -9,46 +9,56 @@
     <link rel="stylesheet" href="/style.css">
     <script src="/client.js" defer></script>
   </head>
-  <body>
-    <header id="header">
-      <h1>
-        FoodESIEA
-      </h1>
-      <h2> 
-      </h2>
-      <h3>
-        Welcome
-      </h3>
-    </header>
+    <body>
+      <header id="header">
+		    <h1>FoodESIEA</h1>
+        <button id="login">Login</button>
+        <h2>Welcome</h2>
+        <p id="signUp">Sign up</p>
+      </header>
+      <main>
+        <p>Tell me the place you like to eat around our school:</p>
 
-    <main>
-      
-      <p>Tell me the place you like to eat around our school:</p>
-      
-      <form id="myForm">
-        <input name="place" type="text" maxlength="100" placeholder="New place">
-        <button type="submit" id="add">Submit Place</button>
-      </form>
-
-        <div id="search">
-          <table id="places">
-            <thead>
-              <tr>
-                <th v-for="gridColumn in gridColumns">
-                  {{gridColumn}}
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-                <tr v-for="gridColumn in places" >
+        <form id="myForm">
+          <input name="place" type="text" maxlength="100" placeholder="New place">
+          <input name="rate" type="text" maxlength="2" placeholder="Rate (0 to 10)">
+          <button type="submit" id="add">Submit Place</button>
+        </form>
+          <div id="search">
+            <table id="places">
+              <thead>
+                <tr>
+                  <th>
+                    Restaurants
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr v-for="gridColumn in places">
+                    <td>
+                      {{gridColumn}}
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    Rates
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="rate in rates">
                   <td>
-                    {{gridColumn}} 
+                    {{rate}}
                   </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-  </body>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </main>
+      <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </body>
 </html>
