@@ -12,9 +12,12 @@
     <body>
       <header id="header">
 		    <h1>FoodESIEA</h1>
-        <button id="login">Login</button>
+        <form action="/login" method="POST" id="myLoger">
+          <input type="text" name="username" placeholder="username"><br>
+          <input type="password" name="password" placeholder="password"><br>
+          <input type="submit" name="login" id="login" placeholder="login"><br>
+        </form>
         <h2>Welcome</h2>
-        <p id="signUp">Sign up</p>
       </header>
       <main>
         <p>Tell me the place you like to eat around our school:</p>
@@ -23,6 +26,10 @@
           <input name="place" type="text" maxlength="100" placeholder="New place">
           <input name="rate" type="text" maxlength="2" placeholder="Rate (0 to 10)">
           <button type="submit" id="add">Submit Place</button>
+        </form>
+        <form id="mySecondForm">
+          <input name="delete" type="text" maxlength="2" placeholder="Row to delete">
+          <button type="submit" id="del">Delete</button>
         </form>
           <div id="search">
             <table id="places">
@@ -58,6 +65,7 @@
               </tbody>
             </table>
           </div>
+
       </main>
       <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     </body>

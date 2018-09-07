@@ -16,11 +16,13 @@ const rates =[
 
 // define variables that reference elements on our page
 const dreamsList = document.getElementById('places');
-const dreamsForm = document.forms[0];
+const dreamsForm = document.forms[1];
 const dreamInput = dreamsForm.elements['place'];
+const delate = document.forms[2];
 
 const ratesList = document.getElementById('rates');
 const rateInput = dreamsForm.elements['rate'];
+const rowInput = delate.elements['delete'];
 
 // a helper function that creates a list item for a given dream
 const appendNewDream = function(place) {
@@ -54,9 +56,8 @@ dreamsForm.onsubmit = function(event) {
   Vue.set(app.places,app.places.length,dreamInput.value);
   Vue.set(app.rates,app.rates.length,rateInput.value);
     
-  console.log(rates);
+  console.log(rowInput.value);
     
-  
   // reset form 
   dreamInput.value = '';
   dreamInput.focus();
@@ -65,6 +66,19 @@ dreamsForm.onsubmit = function(event) {
   }
 
 };
+
+delate.onsubmit = function(event){
+ 
+  event.preventDefault();
+  rates[rowInput.value] = '';
+  places[rowInput.value] = '';
+  var r=rowInput.value;
+  Vue.delete(app.places,r-1);
+  Vue.delete(app.rates,r-1);
+    
+  rowInput.value='';
+}
+
 
 
 var app = new Vue({
